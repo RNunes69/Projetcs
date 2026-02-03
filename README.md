@@ -1,2 +1,2 @@
-# Projetcs
-Projetos desenvolvidos para praticar e consolidar conhecimentos em programação.
+## Projetos em Java
+Meus projetos feitos em java
