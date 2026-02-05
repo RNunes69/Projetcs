@@ -1,2 +1,3 @@
-## Projetos em Java
-Meus projetos feitos em java
+# Projects 
+
+Repositório com meus projetos pessoais desenvolvidos para praticar e consolidar conhecimentos em programação.
