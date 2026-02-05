@@ -1,6 +1,8 @@
 package br.com.rafael.ScreenMatch;
 
+import br.com.rafael.ScreenMatch.model.DadosSerie;
 import br.com.rafael.ScreenMatch.service.ConsumoApi;
+import br.com.rafael.ScreenMatch.service.ConverteDados;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,10 +17,13 @@ public class ScreenMatchApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		var consumoApi = new ConsumoApi();
-		var json = consumoApi.obterDados("https://omdbapi.com/?t=gilmore+girls&Season=1&apikey=5fffbc20&");
+		var json = consumoApi.obterDados("https://omdbapi.com/?t=friends&apikey=5fffbc20&");
 		System.out.println(json);
-		json = consumoApi.obterDados("https://coffee.alexflipnote.dev/random.json");
-		System.out.println(json);
+		//json = consumoApi.obterDados("https://coffee.alexflipnote.dev/random.json");
+		//System.out.println(json);
 
+		ConverteDados conversor = new ConverteDados();
+		DadosSerie dados = conversor.obterDados(json, DadosSerie.class);
+		System.out.println(dados);
 	}
 }
