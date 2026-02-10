@@ -6,3 +6,4 @@ public record DadosEpisodio(String titulo,
                             String dataLancamento,
                             Integer temporada) {
 }
+//use int quando quiser simplicidade e desempenho; use Integer quando precisar tratar o número como objeto
