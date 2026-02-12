@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public record DadosEpisodio(@JsonAlias({"Title", "Titulo"}) String titulo,
                             @JsonAlias("Episode")Integer numero,
                             @JsonAlias("imdbRating")String avaliacao,
-                            @JsonAlias("Released")Integer dataDeLancamento) {
+                            @JsonAlias("Released")String dataDeLancamento) {
 }
 
 //use int quando quiser simplicidade e desempenho; use Integer quando precisar tratar o número como objeto
