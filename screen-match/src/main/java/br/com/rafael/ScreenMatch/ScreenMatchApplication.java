@@ -1,5 +1,6 @@
 package br.com.rafael.ScreenMatch;
 
+import br.com.rafael.ScreenMatch.model.DadosEpisodio;
 import br.com.rafael.ScreenMatch.model.DadosSerie;
 import br.com.rafael.ScreenMatch.service.ConsumoApi;
 import br.com.rafael.ScreenMatch.service.ConverteDados;
@@ -26,5 +27,9 @@ public class ScreenMatchApplication implements CommandLineRunner {
 		ConverteDados conversor = new ConverteDados();
 		DadosSerie dados = conversor.obterDados(json, DadosSerie.class);
 		System.out.println(dados);
+
+		json = consumoApi.obterDados("https://omdbapi.com/?t=impuros&season=1&episode=1&apikey=5fffbc20&");
+		DadosEpisodio dadosEpisodio = conversor.obterDados(json, DadosEpisodio.class);
+		System.out.println(dadosEpisodio);
 	}
 }
