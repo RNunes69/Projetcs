@@ -1,22 +1,22 @@
 package br.com.rafael.ScreenMatch.principal;
 
+import br.com.rafael.ScreenMatch.service.ConsumoApi;
+
 import java.util.Scanner;
 
 public class Principal {
 
     private Scanner leitura = new Scanner(System.in);
+    private ConsumoApi consumo = new ConsumoApi();
 
-    private final String endereco;
-    private final String apiKey;
-
-    public Principal(String endereco, String apiKey) {
-        this.endereco = endereco;
-        this.apiKey = apiKey;
-    }
+    private final String ENDERECO = "https://www.omdbapi.com/?t=";
+    private final String API_KEY = "&apikey=6585022c";
 
     public void exibMenu(){
-        System.out.println("https://omdbapi.com/?t=impuros&season=1&episode=1&apikey=5fffbc20&");
+        System.out.println("Digite o nome da série para a busca");
         var nomeSerie = leitura.nextLine();
+        var json = consumo.obterDados(ENDERECO + nomeSerie.replace(" ", "+") + API_KEY);
+
         //"https://www.omdbapi.com/?t=gilmore+girls&apikey=6585022c"
     }
 }
