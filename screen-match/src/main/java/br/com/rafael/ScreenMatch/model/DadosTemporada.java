@@ -1,7 +1,10 @@
 package br.com.rafael.ScreenMatch.model;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.List;
 
-public record DadosTemporada(@JsonAlias("") numero,
-                             List<DadosEpisodio> episodios) {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public record DadosTemporada(@JsonAlias("Season") Integer numero,
+                             @JsonAlias("Episodes") List<DadosEpisodio> episodios) {
 }
